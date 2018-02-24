@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import Button from 'components/Button';
 import './Hello.scss';
 import r, { api } from 'modules/Request';
 
@@ -28,6 +29,9 @@ class Hello extends React.Component {
     return (
       <div className="hello">
         Hello <code>Component: {this.state.name || 'xxx'}</code>
+        <p>
+          <Button />
+        </p>
       </div>
     );
   }
