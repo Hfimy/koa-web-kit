@@ -64,7 +64,8 @@ const webpackConfig = {
         use: {
           loader: 'babel-loader',
           options: {
-            cacheDirectory: true,
+            cacheDirectory: DEV_MODE,
+            plugins: isHMREnabled ? ['react-hot-loader/babel'] : [],
           },
         },
       },
