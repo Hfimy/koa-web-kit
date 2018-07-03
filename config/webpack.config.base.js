@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
@@ -70,6 +71,8 @@ const webpackConfig = {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
+            // ...JSON.parse(fs.readFileSync(path.join(__dirname, '../.babelrc'), {encoding: 'utf-8'})),
+            // babelrc: path.join(__dirname, '../.babelrc'),
           },
         },
       },

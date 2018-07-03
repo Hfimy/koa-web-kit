@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const config = require('./env');
@@ -54,6 +55,7 @@ const webpackConfig = webpackMerge(
             loader: 'babel-loader',
             options: {
               cacheDirectory: DEV_MODE,
+              // ...JSON.parse(fs.readFileSync(path.join(__dirname, '../.babelrc'), {encoding: 'utf-8'})),
             },
           },
         },
